@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body>
+    <div class="bg-gradient-to-tr flex justify-center from-[#357980] to-[#0B1F53] min-h-screen text-white w-screen">
+        <div class="flex flex-col gap-10 w-[30%] mt-5">
+            <h1 class="place-self-center text-[32px] font-bold">WEATHER APP</h1>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between">
+                <button id="userweatherbtn" class="px-4 py-2 rounded-lg">YOUR WEATHER</button>
+                <button id="searchweatherbtn" class="px-4 py-2 rounded-lg">SEARCH WEATHER</button>
+            </div>
+
+            <!-- Grant Access Section -->
+            <div class="flex flex-col gap-3" id="grant-container">
+                <img src="./assets/location.png" alt="location" width="120px" class="place-self-center">
+                <p class="place-self-center text-[30px]">Grant Location Access</p>
+                <p class="place-self-center">Allow access to get weather information</p>
+                <button class="place-self-center bg-[#3f72af] Grantaccessbtn rounded-lg px-4 py-2">Grant Access</button>
+            </div>
+
+            <!-- Search Box -->
+            <div class="hidden" id="search-container">
+                <form action="submit" class="flex flex-row gap-4 pt-6 searchForm">
+                    <input type="text" placeholder="Search for city" class="w-full rounded-lg bg-blue-200 pl-4" id="searchInput">
+                    <button class="bg-blue-600 rounded-full p-3 searchBtn">
+                        <img src="./assets/search.png" alt="" class="w-[20px] rounded-full">
+                    </button>
+                </form>
+
+                <!-- Loader -->
+                <div class="loader hidden">
+                    <img src="./assets/loading.gif" class="w-[300px] place-self-center">
+                </div>
+            </div>
+
+            <!-- Search Weather Result -->
+            <div class="weatherinformation hidden flex flex-col items-center justify-center pt-1">
+                <div class="flex flex-row p-5 gap-3">
+                    <p class="text-[32px] pt-3 place-self-center countryname"></p>
+                    <img src="" class="w-[42px] h-7 mt-6 flagimage" alt="Loading">
+                </div>
+                <p class="text-[32px] description"></p>
+                <img src="" class="weatherimage w-[80px]">
+                <p class="text-[50px] temp_min"></p>
+
+                <!-- Weather Info Cards -->
+                <div class="flex flex-row mt-5 gap-4 w-full justify-center">
+                    <div class="rounded-lg bg-blue-300 shadow-md w-[180px] h-[110px] flex flex-col items-center justify-center">
+                        <img src="./assets/wind.png" class="w-[40px]">
+                        <p class="text-sm font-semibold">WINDSPEED</p>
+                        <p class="text-lg font-bold windspeedtemp"></p>
+                    </div>
+                    <div class="rounded-lg bg-blue-300 shadow-md w-[180px] h-[110px] flex flex-col items-center justify-center">
+                        <img src="./assets/humidity.png" class="w-[40px]">
+                        <p class="text-sm font-semibold">HUMIDITY</p>
+                        <p class="text-lg font-bold Humiditytemp"></p>
+                    </div>
+                    <div class="rounded-lg bg-blue-300 shadow-md w-[180px] h-[110px] flex flex-col items-center justify-center">
+                        <img src="./assets/cloud.png" class="w-[40px]">
+                        <p class="text-sm font-semibold">CLOUDS</p>
+                        <p class="text-lg font-bold cloudtemp"></p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
